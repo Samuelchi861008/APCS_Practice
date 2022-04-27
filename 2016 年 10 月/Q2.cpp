@@ -15,7 +15,7 @@ signed main()
 
 	cin >> N >> M; // 輸入 N M
 
-    // 根據 N M 輸入值，每 M 個值為一群，每一群中找到最大值並加總與儲存 
+    	// 根據 N M 輸入值，每 M 個值為一群，每一群中找到最大值並加總與儲存 
 	for(int i=0; i<N; i++) {
 		int MAX = -1;
 		for(int j=0; j<M; j++) {
@@ -27,10 +27,10 @@ signed main()
 		S.push_back(MAX);
 	}
 
-    // 輸出總和
+    	// 輸出總和
 	cout << total << endl;
 
-    // 將總和分別除以每一群的最大值，若整除則存進 canMod 中
+    	// 將總和分別除以每一群的最大值，若整除則存進 canMod 中
 	vector<int> canMod;
 	for(int i=0; i<S.size(); i++) {
 		if(total % S[i] == 0) {
@@ -38,10 +38,10 @@ signed main()
 		}
 	}
 
-    // 假設 canMod 沒有任何值表示所有數字都不能整除則輸出 -1，否則依序輸出
+    	// 假設 canMod 沒有任何值表示所有數字都不能整除則輸出 -1，否則依序輸出
 	if(canMod.size() == 0) {
-        cout << -1 << endl;
-    } else {
+		cout << -1 << endl;
+	} else {
 		for(int i=0; i<canMod.size(); i++) {
 			cout << canMod[i] << ((i==canMod.size()-1) ? "\n" : " ");
 		}
