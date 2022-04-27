@@ -16,23 +16,23 @@ signed main()
 	for(int i=0; i<n; i++) {
 		int day1, day2, day3;
 
-        // 輸入 3 天的價格
+        	// 輸入 3 天的價格
 		cin >> day1 >> day2 >> day3;
 
-        // 找出三天價格的最高與最低值
+        	// 找出三天價格的最高與最低值
 		int MAX = max(day1, max(day2, day3)); 
 		int MIN = min(day1, min(day2, day3));
 
-        // 判斷最高與最低差異是否至少大於 d
+        	// 判斷最高與最低差異是否至少大於 d
 		if(MAX - MIN >= d) {
-            // 計算 3 天的價格的平均值
+            		// 計算 3 天的價格的平均值
 			total += (day1 + day2 + day3) / 3;
-            // 商品數量加 1
+            		// 商品數量加 1
 			numOfProduct++;
 		}
 	}
 
-    // 輸出商品數量以及總共的花費
+    	// 輸出商品數量以及總共的花費
 	cout << numOfProduct << " " << total << endl;
 
 	return 0;
