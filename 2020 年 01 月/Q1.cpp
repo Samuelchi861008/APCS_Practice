@@ -27,26 +27,26 @@ signed main()
 
 	cin >> F >> N; // 輸入 F N
 
-    // 根據 N 輸入妹妹出拳
+    	// 根據 N 輸入妹妹出拳
 	for(int i=0; i<N; i++) {
 		int y;
 		cin >> y;
 		sister.push_back(y);
 	}
 
-    // 依序判斷哥哥與妹妹出拳狀態
+    	// 依序判斷哥哥與妹妹出拳狀態
 	for(int i=0; i<sister.size(); i++) {
 		cout << F << " "; // 輸出哥哥所出的拳
 		if(status(F, sister[i]) == 1) {
-            // 若哥哥贏，則輸出贏在第幾輪，並結束
+            		// 若哥哥贏，則輸出贏在第幾輪，並結束
 			cout << ": Won at round " << i+1 << endl;
 			break;
 		} else if(status(F, sister[i]) == -1) {
-            // 若哥哥輸，則輸出輸在第幾輪，並結束
+            		// 若哥哥輸，則輸出輸在第幾輪，並結束
 			cout << ": Lost at round " << i+1 << endl;
 			break;
 		} else {
-            // 若平手且為最後一輪，則輸出平手，若妹妹連續兩輪出了一樣的拳，哥哥下一輪會出打敗前兩輪的拳，否則下一輪會出一樣的拳
+            		// 若平手且為最後一輪，則輸出平手，若妹妹連續兩輪出了一樣的拳，哥哥下一輪會出打敗前兩輪的拳，否則下一輪會出一樣的拳
 			if(i==sister.size()-1) {
 				cout << ": Drew at round " << i+1 << endl;
 			} else if(i!=0 && sister[i-1] == sister[i]) {
