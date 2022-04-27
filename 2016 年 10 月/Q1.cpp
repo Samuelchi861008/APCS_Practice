@@ -14,21 +14,21 @@ signed main()
 	int a, b, c;
 	vector<int> triangle;
 
-    // 根據題意輸入 a b c 三邊長
+    	// 根據題意輸入 a b c 三邊長
 	cin >> a >> b >> c;
 
-    // 將三邊長進行儲存
+    	// 將三邊長進行儲存
 	triangle.push_back(a);
 	triangle.push_back(b);
 	triangle.push_back(c);
 
-    // 將三邊長排序
+    	// 將三邊長排序
 	sort(triangle.begin(), triangle.end());
 
-    // 將排序後結果依序輸出
+    	// 將排序後結果依序輸出
 	cout << triangle[0] << " " << triangle[1] << " " << triangle[2] << endl;
 
-    // 根據題意的公式運算判斷所屬三角形類型
+    	// 根據題意的公式運算判斷所屬三角形類型
 	if(triangle[0] + triangle[1] <= triangle[2]) {
 		cout << "No" << endl;
 	} else if((((triangle[0]*triangle[0]) + (triangle[1]*triangle[1])) < (triangle[2] * triangle[2]))) {
