@@ -15,26 +15,26 @@ signed main()
 
 	cin >> n >> D; // 輸入 n D
 
-    // 輸入歷史價格
+    	// 輸入歷史價格
 	for(int i=0; i<n; i++) {
 		int price;
 		cin >> price;
 		a.push_back(price);
 	}
 
-    // 根據題意，第一個價格買進股票
+    	// 根據題意，第一個價格買進股票
 	int currentPrice = a[0], haveStock = 1;
 	for(int i=1; i<n; i++) {
 		if(haveStock == 1) {
-            // 若當下持有股票
+            		// 若當下持有股票
 			if(a[i] >= currentPrice + D) {
-                // 轉得利潤
+                		// 轉得利潤
 				total += a[i] - currentPrice;
 				currentPrice = a[i];
 				haveStock = 0; // 賣出股票
 			}
 		} else {
-            // 若當下沒有持有股票
+            		// 若當下沒有持有股票
 			if(a[i] <= currentPrice - D) {
 				currentPrice = a[i];
 				haveStock = 1; // 買進股票
@@ -42,7 +42,7 @@ signed main()
 		}
 	}
 
-    // 輸出總利潤
+    	// 輸出總利潤
 	cout << total << endl;
 
 	return 0;
