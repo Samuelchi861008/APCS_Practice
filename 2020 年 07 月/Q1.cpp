@@ -13,9 +13,9 @@ signed main()
 
 	cin >> a >> b >> n; // 輸入 a b n
 
-    // 輸入 n 行
+    	// 輸入 n 行
 	for(int i=0; i<n; i++) {
-        // 持續輸入直到輸入值為 0
+        	// 持續輸入直到輸入值為 0
 		int x, hasA = 0, hasB = 0;
 		cin >> x;
 		while(x) {
@@ -25,11 +25,11 @@ signed main()
 			if(x==(b*-1)) hasB--;
 			cin >> x;
 		}
-        // 假設 a 與 b 同時都擁有的時候，人數加 1
+        	// 假設 a 與 b 同時都擁有的時候，人數加 1
 		if(hasA > 0 && hasB > 0) p++;
 	}
 
-    // 輸出人數
+    	// 輸出人數
 	cout << p << endl;
 
 	return 0;
