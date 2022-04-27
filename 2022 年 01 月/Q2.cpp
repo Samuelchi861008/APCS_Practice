@@ -22,14 +22,14 @@ signed main()
 		S.push_back(num);
 	}
 
-    // 輸入應變力值
+    	// 輸入應變力值
 	for(int i=0; i<n; i++) {
 		int num;
 		cin >> num;
 		T.push_back(num);
 	}
 
-    // 輸入初始排列順序
+    	// 輸入初始排列順序
 	for(int i=0; i<n; i++) {
 		int id;
 		cin >> id;
