@@ -16,7 +16,7 @@ signed main()
 
 	vector<vector<int> > master, ground(n, vector<int>(m, 0));
 
-    // 建立每個魔王的 r c s t，並將每個魔王的起始點都先放炸彈
+    	// 建立每個魔王的 r c s t，並將每個魔王的起始點都先放炸彈
 	for(int i=0; i<k; i++) {
 		vector<int> sub;
 		int r, c, s, t;
@@ -32,7 +32,7 @@ signed main()
 		ground[r][c] = -1;
 	}
 
-    // 直到所有魔王都出局才結束所有回合，而每次也都要紀錄哪個魔王出局
+    	// 直到所有魔王都出局才結束所有回合，而每次也都要紀錄哪個魔王出局
 	vector<int> gameover(k, 0);
 	while(numOfGameover < k) {
 		vector<vector<int> > actions;
@@ -41,13 +41,13 @@ signed main()
 				int nextR = master[i][0] + master[i][2]; // 下一步的 r
 				int nextC = master[i][1] + master[i][3]; // 下一步的 c
 				if(nextR < 0 || nextR >= n || nextC < 0 || nextC >= m) {
-                    // 如果走超出盤面，該魔王就出局
+                    			// 如果走超出盤面，該魔王就出局
 					gameover[i] = 1;
 					numOfGameover++;
 				} else {
-                    // 如果沒有走超出盤面的時候，判斷下一步踩到炸彈
+                    			// 如果沒有走超出盤面的時候，判斷下一步踩到炸彈
 					if(ground[nextR][nextC] == -1) {
-                        // 如果踩到炸彈則紀錄該格的炸彈拆掉，且該魔王出局
+                        			// 如果踩到炸彈則紀錄該格的炸彈拆掉，且該魔王出局
 						vector<int> sub;
 						sub.push_back(0);
 						sub.push_back(nextR);
@@ -56,7 +56,7 @@ signed main()
 						gameover[i] = 1;
 						numOfGameover++;
 					} else {
-                        // 如果沒有踩到炸彈則紀錄該格安裝炸彈，並將魔王確實移動到該位置
+                        			// 如果沒有踩到炸彈則紀錄該格安裝炸彈，並將魔王確實移動到該位置
 						vector<int> sub;
 						sub.push_back(-1);
 						sub.push_back(nextR);
@@ -68,20 +68,20 @@ signed main()
 				}
 			}
 		}
-        // 將紀錄炸彈拆除與安裝炸彈實際放入盤面
+        	// 將紀錄炸彈拆除與安裝炸彈實際放入盤面
 		for(int i=0; i<actions.size(); i++) {
 			ground[actions[i][1]][actions[i][2]] = actions[i][0];
 		}
 	}
 
-    // 走訪盤面計算炸彈數量
+    	// 走訪盤面計算炸彈數量
 	for(int i=0; i<n; i++) {
 		for(int j=0; j<m; j++) {
 			if(ground[i][j] == -1) numOfbomb++;
 		}
 	}
 
-    // 輸出炸彈數量
+    	// 輸出炸彈數量
 	cout << numOfbomb << endl;
 
 	return 0;
