@@ -32,7 +32,7 @@ signed main()
 		}
 	}
 
-    	// 輸出商品數量以及總共的花費
+    // 輸出商品數量以及總共的花費
 	cout << numOfProduct << " " << total << endl;
 
 	return 0;
