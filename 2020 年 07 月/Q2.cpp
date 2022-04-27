@@ -15,7 +15,7 @@ signed main()
 
 	cin >> n >> m; // 輸入 n m
 
-    // 建立 n 顆骰子
+    	// 建立 n 顆骰子
 	for(int i=0; i<n; i++) {
 		vector<int> sub;
 		sub.push_back(1); // 上方
@@ -28,24 +28,24 @@ signed main()
 		int a, b;
 		cin >> a >> b; // 輸入 a b
 		if(a > 0 && b > 0) {
-            // 若 a, b 都是正整數，交換編號 a 與編號 b 的骰子的位置
+            		// 若 a, b 都是正整數，交換編號 a 與編號 b 的骰子的位置
 			vector<int> temp = dices[a-1];
 			dices[a-1] = dices[b-1];
 			dices[b-1] = temp;
 		} else if(b == -1) {
-            // 若 b 為 −1，將編號 a 的骰子向前旋轉
+            		// 若 b 為 −1，將編號 a 的骰子向前旋轉
 			int temp = dices[a-1][1];
 			dices[a-1][1] = dices[a-1][0];
 			dices[a-1][0] = 7 - temp;
 		} else if(b == -2) {
-            // 若 b 為 −2，將編號 a 的骰子向右旋轉
+            		// 若 b 為 −2，將編號 a 的骰子向右旋轉
 			int temp = dices[a-1][2];
 			dices[a-1][2] = dices[a-1][0];
 			dices[a-1][0] = 7 - temp;
 		}
 	}
 
-    // 輸出每顆骰子最上方的值
+    	// 輸出每顆骰子最上方的值
 	for(int i=0; i<n; i++) {
 		cout << dices[i][0] << ((i==n-1) ? "\n" : " ");
 	}
